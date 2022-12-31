@@ -1,0 +1,33 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": [">0.2%", "not dead", "not op_mini all"],
+        "useBuiltIns": "usage",
+        "corejs": "3.14",
+        "modules": false
+      }
+    ],
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "extensions": [
+          ".js",
+          ".ts",
+          ".jsx",
+          ".tsx",
+          ".json",
+          ".ios.js",
+          ".android.js"
+        ]
+      }
+    ]
+  ],
+  "sourceMaps": "inline"
+}
