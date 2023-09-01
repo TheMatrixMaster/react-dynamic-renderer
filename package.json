@@ -29,7 +29,7 @@
   "keywords": [
     "api"
   ],
-  "author": "Stephen Z. Lu",
+  "author": "Stephen Z. Lu <stephen.lu@mail.mcgill.ca> (https://matrixmaster.me)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TheMatrixMaster/react-dynamic-renderer/issues"
