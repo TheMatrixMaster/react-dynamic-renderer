@@ -87,7 +87,6 @@ Apart from displaying React components, the schema needs to enable users to inte
 
 In the JSON representation, an action for setting the React state by pressing a button looks like this:
 ```json
-$ As a general rule of thumb, actions are declared as a prop under the `props` key of a UI object
 {
   "type": "button",
   "props": {
@@ -99,7 +98,7 @@ $ As a general rule of thumb, actions are declared as a prop under the `props` k
   }
 }
 ```
-`name` is a required key that serves as a unique identifier for actions. It is used on the frontend to parse the JSON representation and output the appropriate javascript action.
+As a general rule of thumb, actions are declared as a prop under the `props` key of a UI object. `name` is a required key that serves as a unique identifier for actions. It is used on the frontend to parse the JSON representation and output the appropriate javascript action.
 
 Other variables in the action payload, that we refer to as `arguments`, are provided on a case-specific basis and do not generalize across actions. In the current example, the `key` variable specifies which key should be modified inside the React state and the `value` variable is the newly desired key value. This logic is handled on the frontend inside the `dispatchAction` function as follows:
 ```jsx
@@ -131,7 +130,6 @@ Now that we have covered the declaration of variables and actions, we need to ta
 
 In the JSON representation, a variable reference looks like this:
 ```json
-$ reminder: dynamic variables are almost always referenced inside the `props` key of the UI object
 {
   "type": "text",
   "props": {
@@ -151,6 +149,7 @@ $ reminder: dynamic variables are almost always referenced inside the `props` ke
   }
 }
 ```
+reminder: dynamic variables are almost always referenced inside the `props` key of the UI object
 
 ### Parent Structure and Nesting
 The parent structure of our JSON reference is a 1D array that contains an arbitrary number of pure objects that we will call `variable object` or `VO`. Each VO is an independent entity that references a specific Javascript variable on the frontend. As seen in the example above, VOs can be chained together to access deeply nested variables or to concatenate strings variables. As a general rule of thumb, most variable processing should be performed on the backend before sending such payloads to the frontend. This limits the amount of dynamic processing tasks that the frontend needs to perform before using a referenced variable. However, basic processing such as string concatenation and handling deeply nested values should and are supported on the frontend.
